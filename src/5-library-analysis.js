@@ -1,10 +1,46 @@
 const books = [
-  { title: "The Fire Next Time", author: "James Baldwin", pages: 224, available: true, checkouts: 45 },
-  { title: "Sister Outsider", author: "Audre Lorde", pages: 192, available: false, checkouts: 38 },
-  { title: "The Autobiography of Malcolm X", author: "Malcolm X", pages: 466, available: true, checkouts: 52 },
-  { title: "I Know Why the Caged Bird Sings", author: "Maya Angelou", pages: 289, available: true, checkouts: 67 },
-  { title: "The Souls of Black Folk", author: "W.E.B. Du Bois", pages: 264, available: false, checkouts: 41 },
-  { title: "Their Eyes Were Watching God", author: "Zora Neale Hurston", pages: 219, available: true, checkouts: 59 }
+  {
+    title: "The Fire Next Time",
+    author: "James Baldwin",
+    pages: 224,
+    available: true,
+    checkouts: 45,
+  },
+  {
+    title: "Sister Outsider",
+    author: "Audre Lorde",
+    pages: 192,
+    available: false,
+    checkouts: 38,
+  },
+  {
+    title: "The Autobiography of Malcolm X",
+    author: "Malcolm X",
+    pages: 466,
+    available: true,
+    checkouts: 52,
+  },
+  {
+    title: "I Know Why the Caged Bird Sings",
+    author: "Maya Angelou",
+    pages: 289,
+    available: true,
+    checkouts: 67,
+  },
+  {
+    title: "The Souls of Black Folk",
+    author: "W.E.B. Du Bois",
+    pages: 264,
+    available: false,
+    checkouts: 41,
+  },
+  {
+    title: "Their Eyes Were Watching God",
+    author: "Zora Neale Hurston",
+    pages: 219,
+    available: true,
+    checkouts: 59,
+  },
 ];
 
 // A: Use filter to get all available books and store them in a variable called `availableBooks`.
@@ -14,7 +50,9 @@ const availableBooks = books.filter((book) => book.available === true);
 const availableTitles = availableBooks.map((book) => book.title);
 // console.log(availableTitles);
 // C: Chain filter and map together in a single expression to get the titles of all books with more than 50 checkouts. Store this in a variable called `popularBookTitles`.
-const popularBookTitles = books.filter((book) => book.checkouts > 50).map((book) => book.title);
+const popularBookTitles = books
+  .filter((book) => book.checkouts > 50)
+  .map((book) => book.title);
 // console.log(popularBookTitles);
 // D: Use reduce to calculate the total number of checkouts across ALL books. Store this in a variable called `totalCheckouts`.
 const totalCheckouts = books.reduce((acc, book) => acc + book.checkouts, 0);
