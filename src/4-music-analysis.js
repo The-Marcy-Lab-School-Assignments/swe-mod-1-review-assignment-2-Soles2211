@@ -51,12 +51,20 @@ const songTitles = songs.map((song) => song.title);
 // console.log(songTitles);
 // C: Use find to locate the song "Calm Down" and store it in a variable called `calmDown`.
 const calmDown = songs.find((song) => song.title === "Calm Down");
-console.log(calmDown);
+// console.log(calmDown);
 // D: Use forEach to log each song in this format:
 // "Essence by Wizkid - 2500000 streams"
 // "Peru by Fireboy DML - 1800000 streams"
 // etc...
 
-songs.forEach((song) => {
-  console.log(`${song.title} by ${song.artist} - ${song.streams} streams`);
-});
+// songs.forEach((song) => {
+//   console.log(`${song.title} by ${song.artist} - ${song.streams} streams`);
+// });
+
+const letters = ['a', 'b', 'c', 'd'];
+const capitalize = (str) => str.toUpperCase();
+
+const upperCaseLetters = letters.map((letter) => capitalize(letter));
+// Uncaught TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+
+console.log(upperCaseLetters);
